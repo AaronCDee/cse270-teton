@@ -23,7 +23,7 @@ class TestSmokeTest():
 
   def test_adminPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/index.html")
-    self.driver.set_window_size(1572, 920)
+    self.driver.set_window_size(1920, 1080)
     self.driver.find_element(By.LINK_TEXT, "Admin").click()
     elements = self.driver.find_elements(By.ID, "username")
     assert len(elements) > 0
@@ -36,7 +36,7 @@ class TestSmokeTest():
 
   def test_directoryPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/index.html")
-    self.driver.set_window_size(1572, 920)
+    self.driver.set_window_size(1920, 1080)
     self.driver.find_element(By.LINK_TEXT, "Directory").click()
     self.driver.find_element(By.ID, "directory-grid").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".gold-member:nth-child(9) > p:nth-child(2)").text == "Teton Turf and Tree"
@@ -46,7 +46,7 @@ class TestSmokeTest():
 
   def test_homePage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/index.html")
-    self.driver.set_window_size(1572, 920)
+    self.driver.set_window_size(1920, 1080)
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".header-logo img")
     assert len(elements) > 0
     assert self.driver.find_element(By.CSS_SELECTOR, ".header-title > h1").text == "Teton Idaho"
@@ -66,7 +66,7 @@ class TestSmokeTest():
 
   def test_joinPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/index.html")
-    self.driver.set_window_size(1572, 920)
+    self.driver.set_window_size(1920, 1080)
     self.driver.find_element(By.LINK_TEXT, "Join").click()
     elements = self.driver.find_elements(By.NAME, "fname")
     assert len(elements) > 0
